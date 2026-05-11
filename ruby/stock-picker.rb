@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def stock_picker(prices)
   max_profit = 0
   best_days = [0, 0]
@@ -9,7 +11,7 @@ def stock_picker(prices)
       if profit > max_profit
         max_profit = profit
         best_days = [buy_day, sell_day]
-      end 
+      end
       sell_day += 1
     end
     buy_day += 1
@@ -17,4 +19,4 @@ def stock_picker(prices)
   best_days
 end
 
-p stock_picker([17, 3, 6, 9, 15, 8, 6, 1, 10]) 
+p stock_picker([17, 3, 6, 9, 15, 8, 6, 1, 10])
