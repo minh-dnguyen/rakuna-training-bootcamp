@@ -1,4 +1,3 @@
-
 class Board
   # All possible winning index combinations
   WINNING_COMBOS = [
