@@ -1,4 +1,6 @@
-# Require the file where your caesar_cipher method lives. 
+# frozen_string_literal: true
+
+# Require the file where your caesar_cipher method lives.
 # Adjust the path if your file is named differently.
 require_relative '../caesar_cipher'
 
