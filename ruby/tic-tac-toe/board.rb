@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Board
   # All possible winning index combinations
   WINNING_COMBOS = [
@@ -7,17 +9,17 @@ class Board
   ].freeze
 
   def initialize
-    @cells = Array.new(9, " ")
+    @cells = Array.new(9, ' ')
   end
 
   def display
-    puts ""
+    puts ''
     puts " #{@cells[0]} | #{@cells[1]} | #{@cells[2]} "
-    puts "---+---+---"
+    puts '---+---+---'
     puts " #{@cells[3]} | #{@cells[4]} | #{@cells[5]} "
-    puts "---+---+---"
+    puts '---+---+---'
     puts " #{@cells[6]} | #{@cells[7]} | #{@cells[8]} "
-    puts ""
+    puts ''
   end
 
   # Attempts to place a marker. Returns true if successful, false if invalid.
@@ -31,13 +33,13 @@ class Board
   end
 
   def full?
-    @cells.none? { |cell| cell == " " }
+    @cells.none? { |cell| cell == ' ' }
   end
 
   # Returns the winning marker ("X" or "O") if there's a winner, otherwise nil.
   def winner
     WINNING_COMBOS.each do |combo|
-      if @cells[combo[0]] != " " &&
+      if @cells[combo[0]] != ' ' &&
          @cells[combo[0]] == @cells[combo[1]] &&
          @cells[combo[1]] == @cells[combo[2]]
         return @cells[combo[0]]
@@ -49,6 +51,6 @@ class Board
   private
 
   def valid_move?(position)
-    position.between?(0, 8) && @cells[position] == " "
+    position.between?(0, 8) && @cells[position] == ' '
   end
 end
